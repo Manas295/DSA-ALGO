@@ -7,7 +7,7 @@ public class FrequenciesOfElementInSortedArray {
         int i =1; // will traverse from second element of array
         int n = arr.length;
         while(i<n){
-            while(i<n && arr[i-1]==arr[i]){
+            while(i<n && arr[i-1]==arr[i]){// OR if(arr[i-1] == arr[i]
                 freq++;
                 i++;
             }
