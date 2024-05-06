@@ -1,3 +1,5 @@
+package org.dsa.arrays;
+
 public class MaxSubArraySum {
 
     /*
@@ -25,18 +27,14 @@ public class MaxSubArraySum {
      */
     public static void main(String[] args) {
         int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
-        int max_so_far = Integer.MIN_VALUE;
-        int max_ending_here = 0;
+        int MaxEnding = a[0];
+        int res = a[0];
 
-        for(int i=0; i<a.length; i++){
-            max_ending_here = max_ending_here + a[i];
-            if(max_so_far < max_ending_here){
-                max_so_far = max_ending_here;
-            }
-            if(max_ending_here < 0){
-                max_ending_here = 0;
-            }
+        for(int i=1; i<a.length; i++){
+            MaxEnding = Math.max(MaxEnding + a[i],a[i]);
+            res = Math.max(MaxEnding,res);
+
         }
-        System.out.println("Max Contiguous Sub Array Sum "+max_so_far);
+        System.out.println("Max Contiguous Sub Array Sum "+res);
     }
 }
