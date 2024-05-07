@@ -5,6 +5,7 @@ public class MaxLengthEvenOddSubArray {
         int arr[] = {5,10,20,6,3,8};
         int res =1 ;
         int curr=1;
+        //Finding subarrays ending with ith element
         for(int i=1;i< arr.length;i++){
             if((arr[i]%2 == 0 && arr[i-1]%2 != 0) ||
                     (arr[i]%2 != 0 && arr[i-1] % 2 == 0)){
