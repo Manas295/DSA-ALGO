@@ -33,7 +33,7 @@ public class AnagramSearch {
 
         //starting from pattern length as count for 1st window already computed
         for(int i=pat.length();i<txt.length();i++){
-            //checking if conent for both arrays is same or not before sliding the window
+            //checking if content for both arrays is same or not before sliding the window
             if(areSame(CT,CP)){
                 return true;
             }
