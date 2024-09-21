@@ -2,7 +2,7 @@ package org.dsa.strings;
 
 import java.util.Arrays;
 
-public class StringIsAnagram {
+public class CheckForAnagram {
     public static void main(String[] args) {
         String s1 = "listen";
         String s2 = "szilent";
