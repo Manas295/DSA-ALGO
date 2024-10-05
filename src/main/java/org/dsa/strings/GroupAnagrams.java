@@ -5,11 +5,11 @@ import java.util.*;
 Let’s see how we can implement the above algorithm:
 
 1 For each string, compute a 26-element list. Each element in this list represents the frequency of an English
-  letter in the corresponding string. This frequency count will be represented as a tuple. For example, “abbccc”
+  letter in the corresponding string. This frequency count will be represented as a tuple. For example, abbccc
   will be represented as (1, 2, 3, 0, 0, ..., 0). This mapping will generate identical lists for strings that are anagrams.
 
 2 Use this list as a key to insert the strings into a hash map. Between the counts, we’ll insert "#"s such that
-  it will look like (“#1#0#1#0#1#0#0#0#1......”). All anagrams will be mapped to the same key in this hash map.
+  it will look like (#1#0#1#0#1#0#0#0#1......). All anagrams will be mapped to the same key in this hash map.
 
 3 While traversing each string, we generate its 26-element list and check if this list is present as a key in the hash map.
   If it does, we’ll append the string to the array corresponding to that key. Otherwise, we’ll add the new key-value pair to the hash map.
@@ -29,6 +29,15 @@ class GroupAnagrams {
             Arrays.fill(count, 0);
             for (char c : s.toCharArray()){
                 // Calculating the value from 1 to 26 for the alphabet
+                /*
+                    This converts the character's ASCII value to an index ranging from 0 to 25.
+                    Let's break this down with a concrete example:
+                    Character 'c':
+                    ASCII value of 'c' is 99.
+                    ASCII value of 'a' is 97.
+                    Calculation: 99 - 97 = 2.
+                    So, 'c' - 'a' gives us 2, meaning 'c' is the 3rd letter in the alphabet, and its index is 2.
+                 */
                 int index = c - 'a';
                 count[index]++;
             }
