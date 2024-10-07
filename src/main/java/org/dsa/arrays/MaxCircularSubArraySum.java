@@ -1,5 +1,15 @@
 package org.dsa.arrays;
+/*
+How to Find It
+Kadane's Algorithm: First, use Kadane's Algorithm to find the maximum subarray sum in the normal, non-circular array.
 
+Circular Case: Find the sum of the array, then invert the elements and apply Kadane's Algorithm again.
+The result, subtracted from the total sum, gives the maximum sum of a circular subarray.
+
+Compare Results: The maximum of these two results is your answer.
+
+
+ */
 public class MaxCircularSubArraySum {
     public static int maxCircularSum(int a[], int n)
     {
